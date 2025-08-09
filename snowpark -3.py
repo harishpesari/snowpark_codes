@@ -7,8 +7,8 @@ from snowflake.snowpark.functions import *
 # Define connection parameters directly
 connection_parameters = {
     "account": "ISCJGIV-TX84484",
-    "user": "INDRANI",
-    "password": "LuchiBuchi@2610", 
+    "user": "****",
+    "password": "****", 
     "role": "ACCOUNTADMIN",
     "warehouse": "SNOWFLAKE_LEARNING_WH",
     "database": "SNOWFLAKE_LEARNING_DB",
@@ -27,5 +27,6 @@ dep_df = session.table("DEPARTMENTS")
 fin_df = emp_df.join(dep_df,emp_df.col("dept_id")==dep_df.col("dept_id"),join_type="inner")
 
 final_df= fin_df.select(emp_df["emp_name"],dep_df["dept_name"],dep_df["location"])
+
 
 final_df.show()
