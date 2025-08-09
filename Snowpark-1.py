@@ -9,8 +9,8 @@ from snowflake.snowpark.functions import col
 # Define connection parameters directly
 connection_parameters = {
     "account": "ISCJGIV-TX84484",
-    "user": "INDRANI",
-    "password": "LuchiBuchi@2610",
+    "user": "*****",
+    "password": "******",
     "role": "ACCOUNTADMIN",
     "warehouse": "SNOWFLAKE_LEARNING_WH",
     "database": "SNOWFLAKE_LEARNING_DB",
@@ -25,6 +25,7 @@ emp_df = session.table("employees")
 emp_df.show()
 fil_df= emp_df.filter(col("gender")=='F')
 fil_df.show()
+
 
 
 
