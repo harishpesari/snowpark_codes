@@ -4,8 +4,8 @@ from snowflake.snowpark.functions import *
 # Define connection parameters directly
 connection_parameters = {
     "account": "ISCJGIV-TX84484",
-    "user": "INDRANI",
-    "password": "LuchiBuchi@2610", 
+    "user": "****",
+    "password": "******", 
     "role": "ACCOUNTADMIN",
     "warehouse": "SNOWFLAKE_LEARNING_WH",
     "database": "SNOWFLAKE_LEARNING_DB",
@@ -26,6 +26,7 @@ fin_df = emp_df.join(dep_df,emp_df.col("dept_id")==dep_df.col("dept_id"),join_ty
 final_df= fin_df.select(dep_df["dept_name"],emp_df["salary"])
 
 agg_df= final_df.group_by (final_df.col("dept_name")).agg(round(avg(final_df.col("salary")),2).alias("avg_salary"))
+
 
 
 agg_df.show()
